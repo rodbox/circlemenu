@@ -1,18 +1,18 @@
 $(document).ready(function(){
 	var ifMobile = $.appMobile();
 	if(ifMobile){
-	    $.event.special.tap.tapholdThreshold = 175;
-
+	    // $.event.special.duration = 175;
+        $('.for-mobile').show();
 	    $("body")
-	    	.on("vmousedown",function(e){
-	    		localStorage.holdX = e.clientX;
-    			localStorage.holdY = e.clientY;
-	    	})
-	    	.on("taphold",function (e){
-	    		toggleMouseMenu(localStorage.holdX,localStorage.holdY)
+	    	.on("doubletap",function (e,touch){
+	    		toggleMouseMenu(touch.secondTap.position.x,touch.secondTap.position.y)
 	    })
+
+
+
 	}
     else{
+        $('.for-desktop').show();
     	$(this).mousedown(function(e) {
             if (e.button == 2) {
                 toggleMouseMenu(e.clientX,e.clientY);
@@ -23,6 +23,11 @@ $(document).ready(function(){
         });
     }
 
+       $(document).on("click tap",'.circle-center a',function (){
+
+            var mouseMenu = $('#circle-mouse');
+            mouseMenu.removeClass('open');
+        })
 
     function toggleMouseMenu(posX,posY){
     	var mouseMenu = $('#circle-mouse');
@@ -44,7 +49,7 @@ $(document).ready(function(){
 
         var elem = $("<div>",{"class":"elem"});
 
-        var elemCenter = $("<div>",{"class":"circle-center"}).html("X");
+        var elemCenter = $("<div>",{"class":"circle-center"}).html("<a href='#'>X</a>");
         elemCenter.on('vclick',function(){
             toggleMouseMenu();
         })

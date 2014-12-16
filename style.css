@@ -9,3 +9,16 @@
 html, body, .h-100 {
     height: 100%
 }
+.line-offset-3{
+  margin-top: 50%;
+}
+
+.well{
+  background-color: #fff8f2 !important;
+  border: 0px !important;
+}
+
+.for-desktop,
+.for-mobile{
+  display: none;
+}

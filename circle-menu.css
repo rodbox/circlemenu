@@ -100,6 +100,11 @@
   display: inline-block;
   z-index: 900;
 }
+.circle .circle-center a {
+  text-decoration: none;
+  color: #242424;
+  font-weight: bolder;
+}
 /* Elem */
 .circle .circle-1.pos-6 {
   -moz-transform: translateX(72px) translateY(72px) scale(0.8);
