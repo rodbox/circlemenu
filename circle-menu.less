@@ -14,6 +14,8 @@
 @startRight: 2*pi();
 @startBottom: 0.5*pi();
 
+@circleColor : rgba(0,0,0,0.2);
+@aColor : #242424;
 @start:  @startRight,@startTop;
 
 /* nb Elem  */
@@ -72,8 +74,17 @@
 					outline: none;
 					line-height: unit(@size,px);
 					width: unit(@size,px);
+					color:@aColor;
+					.animate(125ms);
 					&:hover{
-						background-color: #009e4d;
+						background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.21) 37%, rgba(255,255,255,0.01) 67%, rgba(255,255,255,0) 69%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.65)), color-stop(37%,rgba(255,255,255,0.21)), color-stop(67%,rgba(255,255,255,0.01)), color-stop(69%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.21) 37%,rgba(255,255,255,0.01) 67%,rgba(255,255,255,0) 69%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.21) 37%,rgba(255,255,255,0.01) 67%,rgba(255,255,255,0) 69%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.21) 37%,rgba(255,255,255,0.01) 67%,rgba(255,255,255,0) 69%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,0.65) 0%,rgba(255,255,255,0.21) 37%,rgba(255,255,255,0.01) 67%,rgba(255,255,255,0) 69%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 					}
 				}
 		}
@@ -97,7 +108,7 @@
 		.animate(125ms);
 		.scale(0);
 		.shadow(0);
-		background-color: #ccc;
+		background-color: @circleColor;
 		width: unit(@radius*2,px);
 		line-height: unit(@radius*2,px);
 		text-align: center;
@@ -124,8 +135,6 @@
 	}
 
 	.circle.open .circle-@{y}.pos-@{i}{
-		
-
 		@top:ceil(@ref * sin(@angle)+@sizeAngle);
 		@left:ceil(@ref * cos(@angle)+@sizeAngle);
 

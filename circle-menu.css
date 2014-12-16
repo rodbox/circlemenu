@@ -36,9 +36,28 @@
   outline: none;
   line-height: 48px;
   width: 48px;
+  color: #242424;
+  -webkit-transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .circle.open .elem a:hover {
-  background-color: #009e4d;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.21) 37%, rgba(255, 255, 255, 0.01) 67%, rgba(255, 255, 255, 0) 69%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255, 255, 255, 0.65)), color-stop(37%, rgba(255, 255, 255, 0.21)), color-stop(67%, rgba(255, 255, 255, 0.01)), color-stop(69%, rgba(255, 255, 255, 0)));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.21) 37%, rgba(255, 255, 255, 0.01) 67%, rgba(255, 255, 255, 0) 69%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.21) 37%, rgba(255, 255, 255, 0.01) 67%, rgba(255, 255, 255, 0) 69%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.21) 37%, rgba(255, 255, 255, 0.01) 67%, rgba(255, 255, 255, 0) 69%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.21) 37%, rgba(255, 255, 255, 0.01) 67%, rgba(255, 255, 255, 0) 69%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a6ffffff', endColorstr='#00ffffff', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
 }
 .circle .elem {
   -webkit-transition: all 125ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -69,7 +88,7 @@
   transform: scale(0);
   -webkit-box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.05);
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.2);
   width: 192px;
   line-height: 192px;
   text-align: center;
